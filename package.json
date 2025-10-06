@@ -1,10 +1,16 @@
 {
   "name": "movie-admin-fe",
   "version": "0.0.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node dist/movie-admin-fe/server/server.mjs",
+    "start:dev": "ng serve",
+    "build": "ng build --configuration=production",
+    "build:ssr": "ng build --configuration=production && npm run serve:ssr:movie-admin-fe",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:movie-admin-fe": "node dist/movie-admin-fe/server/server.mjs",
